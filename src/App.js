@@ -254,71 +254,71 @@ export default function App() {
           >
             Skills
           </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={6} sm={3} md={2}>
+          <Grid container spacing={1}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={python}
                 alt="python"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={6} sm={3} md={2}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={django}
                 alt="django"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={6} sm={3} md={2}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={js}
                 alt="js"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={6} sm={3} md={2}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={html}
                 alt="html"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={6} sm={3} md={2}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={css}
                 alt="css"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={6} sm={3} md={2}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={flutter}
                 alt="flutter"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={6} sm={3} md={2}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={dart}
                 alt="dart"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={6} sm={3} md={2}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={angular}
                 alt="angular"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={6} sm={3} md={2}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={react}
                 alt="react"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={6} sm={3} md={2}>
+            <Grid item xs={4} sm={3} md={2}>
               <img
                 src={next}
                 alt="next"
