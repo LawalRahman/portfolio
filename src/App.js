@@ -114,7 +114,7 @@ export default function App() {
               </span>
             </Typography>
             <Typography variant="p" align="center" color="text.white" paragraph>
-              I am result driven, passionate about creating web applications
+              I am result driven and passionate about creating web applications
               that seeks to meet customer satisfaction.
             </Typography>
             <Stack
