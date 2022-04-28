@@ -43,7 +43,9 @@ export default function App() {
             sx={{ flexGrow: 1 }}
             fontSize="15px"
           >
-            RahmanLawal
+            <Link href="/" underline="none">
+              rahmanlawal
+            </Link>
           </Typography>
           <Typography variant="h6" align="center" gutterBottom>
             <Stack direction={"row"} spacing={2} justifyContent="center">
@@ -92,18 +94,20 @@ export default function App() {
               color="text.primary"
               gutterBottom
             >
-              Hi!
+              Hello! I'm{" "}
+              <span
+                style={{
+                  fontSize: "50px",
+                  fontWeight: "bolder",
+                  fontFamily: "Nunito",
+                }}
+              >
+                Rahman Lawal
+              </span>
             </Typography>
-            <Typography
-              variant="p"
-              align="center"
-              color="text.white"
-              paragraph
-              // fontSize={8}
-            >
-              I am Rahman, passionate about creating web applications. My works
-              are result driven and inclined towards meeting customer
-              satisfaction.
+            <Typography variant="p" align="center" color="text.white" paragraph>
+              I am result driven, passionate about creating web applications
+              that seeks to meet customer satisfaction.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -136,111 +140,180 @@ export default function App() {
           </Container>
         </Box>
 
-        <Container sx={{ py: 8 }} maxWidth="md" align="center">
+        <Container sx={{ py: 2 }} maxWidth="md" align="center">
+          <Typography
+            variant="h3"
+            py={6}
+            style={{ textDecoration: "underline" }}
+          >
+            Projects
+          </Typography>
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card sx={{ maxWidth: 300 }}>
-                  <CardContent>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card sx={{ maxWidth: 300 }}>
+                <CardContent>
+                  <Box height={100} style={{ fontSize: "12px" }}>
                     <Typography gutterBottom component="div">
-                      Lizard
+                      E-commerce
                     </Typography>
                     <Typography variant="p" color="text.secondary">
-                      Lizards are a widespread group of squamate reptiles, with
-                      over 6,000 species, ranging across all continents except
-                      Antarctica
+                      App to viewitems, add them to cart and make payment
+                      online. Developed with Nextjs
                     </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://e-commerzonia.netlify.app/"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                  {/* <Button size="small">Repo</Button> */}
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card sx={{ maxWidth: 300 }}>
+                <CardContent>
+                  <Box height={100} style={{ fontSize: "12px" }}>
+                    <Typography gutterBottom component="div">
+                      Forkify
+                    </Typography>
+                    <Typography variant="p" color="text.secondary">
+                      Search for any recipe. Developed with html, css and
+                      javascript
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://forkify-rahman.netlify.app/#5ed6604591c37cdc054bcb33"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                  {/* <Button size="small">Repo</Button> */}
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card sx={{ maxWidth: 300 }}>
+                <CardContent>
+                  <Box height={100} style={{ fontSize: "12px" }}>
+                    <Typography gutterBottom component="div">
+                      Meetup App
+                    </Typography>
+                    <Typography variant="p" color="text.secondary">
+                      Simple app to create, favorite and view meetups. Developed
+                      with react
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://the-react-app.netlify.app/"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                  {/* <Button size="small">Repo</Button> */}
+                </CardActions>
+              </Card>
+            </Grid>
           </Grid>
         </Container>
-        <Container sx={{ py: 8 }} maxWidth="md" align="center">
-          <Typography variant="h3" py={6}>
+        <Container sx={{ py: 2 }} maxWidth="md" align="center">
+          <Typography
+            variant="h3"
+            py={6}
+            style={{ textDecoration: "underline" }}
+          >
             Skills
           </Typography>
-          <Grid container spacing={5}>
-            <Grid item xs={12} sm={6} md={3}>
+          <Grid container spacing={4}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="python.svg"
+                src="portfolio/python.svg"
                 alt="python"
-                style={{ height: "200px", width: "200px" }}
+                style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="django.svg"
+                src="portfolio/django.svg"
                 alt="django"
-                style={{ height: "200px", width: "200px" }}
+                style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="js.svg"
+                src="portfolio/js.svg"
                 alt="js"
-                style={{ height: "200px", width: "200px" }}
+                style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="html.svg"
+                src="portfolio/html.svg"
                 alt="html"
-                style={{ height: "200px", width: "200px" }}
+                style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="css.svg"
+                src="portfolio/css.svg"
                 alt="css"
-                style={{ height: "200px", width: "200px" }}
+                style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="flutter.svg"
+                src="portfolio/flutter.svg"
                 alt="flutter"
-                style={{ height: "200px", width: "200px" }}
+                style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="dart.svg"
+                src="portfolio/dart.svg"
                 alt="dart"
-                style={{ height: "200px", width: "200px" }}
+                style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="angular.svg"
+                src="portfolio/angular.svg"
                 alt="angular"
-                style={{ height: "200px", width: "200px" }}
+                style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="react.svg"
+                src="portfolio/react.svg"
                 alt="react"
-                style={{ height: "200px", width: "200px" }}
+                style={{ height: "100px", width: "100px" }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid item xs={6} sm={3} md={2}>
               <img
-                src="next.png"
+                src="portfolio/next.png"
                 alt="next"
-                style={{ height: "200px", width: "200px", fill: "black" }}
+                style={{ height: "100px", width: "100px", fill: "black" }}
               />
             </Grid>
           </Grid>
         </Container>
       </main>
       {/* Footer */}
-      <Box sx={{ p: 6 }} component="footer" height={100} color="white">
+      <Box sx={{ py: 2 }} component="footer" height={100} color="white">
         <Typography variant="h6" align="center" gutterBottom>
           <Stack direction={"row"} spacing={2} justifyContent="center">
             <Link
