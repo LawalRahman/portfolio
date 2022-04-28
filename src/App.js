@@ -12,14 +12,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
+import CodeIcon from "@mui/icons-material/Code";
 import "font-awesome/css/font-awesome.min.css";
 import {
   createTheme,
   ThemeProvider,
   responsiveFontSizes,
 } from "@mui/material/styles";
-
-const cards = [1, 2, 3];
 
 let theme = createTheme({
   typography: {
@@ -44,7 +43,7 @@ export default function App() {
             fontSize="15px"
           >
             <Link href="/" underline="none">
-              rahmanlawal
+              {"<rahmanlawal>"}
             </Link>
           </Typography>
           <Typography variant="h6" align="center" gutterBottom>
