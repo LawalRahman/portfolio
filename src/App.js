@@ -12,13 +12,22 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
-import CodeIcon from "@mui/icons-material/Code";
 import "font-awesome/css/font-awesome.min.css";
 import {
   createTheme,
   ThemeProvider,
   responsiveFontSizes,
 } from "@mui/material/styles";
+import python from "./img/python.svg";
+import js from "./img/js.svg";
+import html from "./img/html.svg";
+import dart from "./img/dart.svg";
+import flutter from "./img/flutter.svg";
+import angular from "./img/angular.svg";
+import css from "./img/css.svg";
+import next from "./img/next.png";
+import django from "./img/django.svg";
+import react from "./img/react.svg";
 
 let theme = createTheme({
   typography: {
@@ -42,7 +51,7 @@ export default function App() {
             sx={{ flexGrow: 1 }}
             fontSize="15px"
           >
-            <Link href="/" underline="none">
+            <Link href="/portfolio" underline="none">
               {"<rahmanlawal>"}
             </Link>
           </Typography>
@@ -240,70 +249,70 @@ export default function App() {
           <Grid container spacing={4}>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="python.svg"
+                src={python}
                 alt="python"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="django.svg"
+                src={django}
                 alt="django"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="js.svg"
+                src={js}
                 alt="js"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="html.svg"
+                src={html}
                 alt="html"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="css.svg"
+                src={css}
                 alt="css"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="flutter.svg"
+                src={flutter}
                 alt="flutter"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="dart.svg"
+                src={dart}
                 alt="dart"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="angular.svg"
+                src={angular}
                 alt="angular"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="react.svg"
+                src={react}
                 alt="react"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="next.png"
+                src={next}
                 alt="next"
                 style={{ height: "100px", width: "100px", fill: "black" }}
               />
