@@ -1,20 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.9b3e859c.css",
-    "main.js": "/static/js/main.c2d7e684.js",
-    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
-    "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
-    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
-    "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
-    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
-    "index.html": "/index.html",
-    "main.9b3e859c.css.map": "/static/css/main.9b3e859c.css.map",
-    "main.c2d7e684.js.map": "/static/js/main.c2d7e684.js.map",
-    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+    "main.css": "/portfolio/static/css/main.1f38a17b.css",
+    "main.js": "/portfolio/static/js/main.2803c918.js",
+    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/portfolio/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/portfolio/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/portfolio/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/portfolio/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/portfolio/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/react.svg": "/portfolio/static/media/react.fdd3331d261ad6d5e1c92448737aa2aa.svg",
+    "static/media/dart.svg": "/portfolio/static/media/dart.9ff1e67139b2695c779dcb69cda6c3d5.svg",
+    "static/media/django.svg": "/portfolio/static/media/django.c21fc22f8d0e139416d377f8f5e5b77b.svg",
+    "static/media/python.svg": "/portfolio/static/media/python.42f87cb3c004a68af35276b967671a1c.svg",
+    "static/media/flutter.svg": "/portfolio/static/media/flutter.6a276c31154d363125744c59c3f1edb1.svg",
+    "index.html": "/portfolio/index.html",
+    "static/media/js.svg": "/portfolio/static/media/js.84ac97b2d839ad0e78473327947874a9.svg",
+    "static/media/angular.svg": "/portfolio/static/media/angular.24c036287758115b5a879c56baa116f8.svg",
+    "static/media/html.svg": "/portfolio/static/media/html.84c6adac417775a66b5529f1ae8d4572.svg",
+    "static/media/css.svg": "/portfolio/static/media/css.9882e252f3baf8b8d57642a1384d8ba3.svg",
+    "main.1f38a17b.css.map": "/portfolio/static/css/main.1f38a17b.css.map",
+    "main.2803c918.js.map": "/portfolio/static/js/main.2803c918.js.map",
+    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b3e859c.css",
-    "static/js/main.c2d7e684.js"
+    "static/css/main.1f38a17b.css",
+    "static/js/main.2803c918.js"
   ]
 }
