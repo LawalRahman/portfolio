@@ -81,6 +81,14 @@ export default function App() {
               >
                 <i className="fa fa-brands fa-linkedin"></i>
               </Link>
+              <Link
+                href="https://www.behance.net/rahmanlawal"
+                underline="none"
+                target="_blank"
+                rel="noopener"
+              >
+                <i className="fa fa-brands fa-behance"></i>
+              </Link>
             </Stack>
           </Typography>
         </Toolbar>
@@ -347,6 +355,14 @@ export default function App() {
               rel="noopener"
             >
               <i className="fa fa-brands fa-linkedin"></i>
+            </Link>
+            <Link
+              href="https://www.behance.net/rahmanlawal"
+              underline="none"
+              target="_blank"
+              rel="noopener"
+            >
+              <i className="fa fa-brands fa-behance"></i>
             </Link>
           </Stack>
         </Typography>
