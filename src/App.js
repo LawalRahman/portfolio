@@ -111,24 +111,25 @@ export default function App() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="outlined">
+              <Button variant="contained">
                 <Link
                   href="https://drive.google.com/file/d/1ruhEjfhBu7yZWE9DRQGgzbzT-8WRpk1u/view?usp=sharing"
                   underline="none"
                   target="_blank"
                   rel="noopener"
+                  style={{ color: "white" }}
                 >
                   Download CV
                 </Link>
               </Button>
               <Button variant="outlined">
                 <Link
-                  href="https://www.linkedin.com/in/rahman-lawal-ba67a3102/"
+                  href="https://api.whatsapp.com/send/?phone=2347081838147"
                   underline="none"
                   target="_blank"
                   rel="noopener"
                 >
-                  Visit LinkedIn Profile
+                  WhapsApp <i className="fa fa-brands fa-whatsapp"></i>
                 </Link>
               </Button>
             </Stack>
