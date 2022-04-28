@@ -241,70 +241,70 @@ export default function App() {
           <Grid container spacing={4}>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/python.svg"
+                src="python.svg"
                 alt="python"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/django.svg"
+                src="django.svg"
                 alt="django"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/js.svg"
+                src="js.svg"
                 alt="js"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/html.svg"
+                src="html.svg"
                 alt="html"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/css.svg"
+                src="css.svg"
                 alt="css"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/flutter.svg"
+                src="flutter.svg"
                 alt="flutter"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/dart.svg"
+                src="dart.svg"
                 alt="dart"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/angular.svg"
+                src="angular.svg"
                 alt="angular"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/react.svg"
+                src="react.svg"
                 alt="react"
                 style={{ height: "100px", width: "100px" }}
               />
             </Grid>
             <Grid item xs={6} sm={3} md={2}>
               <img
-                src="portfolio/next.png"
+                src="next.png"
                 alt="next"
                 style={{ height: "100px", width: "100px", fill: "black" }}
               />
