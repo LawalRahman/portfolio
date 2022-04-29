@@ -244,6 +244,31 @@ export default function App() {
                 </CardActions>
               </Card>
             </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card sx={{ maxWidth: 300 }}>
+                <CardContent>
+                  <Box height={100} style={{ fontSize: "12px" }}>
+                    <Typography gutterBottom component="div">
+                      React Calculator
+                    </Typography>
+                    <Typography variant="p" color="text.secondary">
+                      Simple calculator build with react
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://calculateur.netlify.app/"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                  {/* <Button size="small">Repo</Button> */}
+                </CardActions>
+              </Card>
+            </Grid>
           </Grid>
         </Container>
         <Container sx={{ py: 2 }} maxWidth="md" align="center">
