@@ -29,6 +29,7 @@ import next from "./img/next.png";
 import django from "./img/django.svg";
 import react from "./img/react.svg";
 import { CircularProgress } from "@mui/material";
+import "./App.css";
 
 let theme = createTheme({
   typography: {
@@ -46,7 +47,7 @@ export default function App() {
     .then((resp) => resp.json())
     .then((data) => setRepo(data.filter((item) => item.name !== "portfolio")));
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} className="layout">
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar fontSize="10px">
@@ -103,8 +104,8 @@ export default function App() {
         <Box
           sx={{
             bgcolor: "background.paper",
-            pt: 8,
-            pb: 6,
+            pt: 4,
+            pb: 2,
           }}
         >
           <Container maxWidth="md">
@@ -115,16 +116,7 @@ export default function App() {
               color="text.primary"
               gutterBottom
             >
-              Hello! I'm{" "}
-              <span
-                style={{
-                  fontSize: "50px",
-                  fontWeight: "bolder",
-                  fontFamily: "Nunito",
-                }}
-              >
-                Rahman Lawal
-              </span>
+              Hi! <div className="neu-text">I'm Rahman</div>
             </Typography>
             <Typography variant="p" align="center" color="text.white" paragraph>
               I am result driven and passionate about creating web applications
@@ -161,7 +153,7 @@ export default function App() {
           </Container>
         </Box>
 
-        <Container sx={{ py: 2 }} maxWidth="md" align="center">
+        <Container sx={{ pt: 2 }} maxWidth="md" align="center">
           <Typography
             variant="h3"
             py={6}
@@ -173,7 +165,7 @@ export default function App() {
           <Grid container spacing={4}>
             {repo ? (
               repo.map((repository) => (
-                <Grid item xs={12} sm={6} md={4} key={repository.id}>
+                <Grid item xs={6} sm={4} md={3} key={repository.id}>
                   <Card sx={{ maxWidth: 300 }}>
                     <CardContent>
                       <Box height={100} style={{ fontSize: "12px" }}>
@@ -213,7 +205,7 @@ export default function App() {
             )}
           </Grid>
         </Container>
-        <Container sx={{ py: 2 }} maxWidth="md" align="center">
+        <Container sx={{ pt: 2 }} maxWidth="md" align="center">
           <Typography
             variant="h3"
             py={6}
@@ -222,74 +214,74 @@ export default function App() {
             Skills
           </Typography>
           <Grid container spacing={1}>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={python}
                 alt="python"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "60px", width: "60px" }}
               />
             </Grid>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={django}
                 alt="django"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "60px", width: "60px" }}
               />
             </Grid>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={js}
                 alt="js"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "60px", width: "60px" }}
               />
             </Grid>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={html}
                 alt="html"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "60px", width: "60px" }}
               />
             </Grid>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={css}
                 alt="css"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "60px", width: "60px" }}
               />
             </Grid>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={flutter}
                 alt="flutter"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "60px", width: "60px" }}
               />
             </Grid>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={dart}
                 alt="dart"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "60px", width: "60px" }}
               />
             </Grid>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={angular}
                 alt="angular"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "60px", width: "60px" }}
               />
             </Grid>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={react}
                 alt="react"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "60px", width: "60px" }}
               />
             </Grid>
-            <Grid item xs={4} sm={3} md={2}>
+            <Grid item xs={3} sm={3} md={2}>
               <img
                 src={next}
                 alt="next"
-                style={{ height: "100px", width: "100px", fill: "black" }}
+                style={{ height: "60px", width: "60px", fill: "black" }}
               />
             </Grid>
           </Grid>
