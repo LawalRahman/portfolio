@@ -43,11 +43,16 @@ theme = responsiveFontSizes(theme);
 
 export default function App() {
   const [repo, setRepo] = React.useState([]);
-  fetch("https://api.github.com/users/LawalRahman/repos")
-    .then((resp) => resp.json())
-    .then((data) => setRepo(data.filter((item) => item.name !== "portfolio")));
+  React.useEffect(() => {
+    fetch("https://api.github.com/users/LawalRahman/repos")
+      .then((resp) => resp.json())
+      .then((data) =>
+        setRepo(data.filter((item) => item.name !== "portfolio"))
+      );
+  }, []);
+
   return (
-    <ThemeProvider theme={theme} className="layout">
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar fontSize="10px">
