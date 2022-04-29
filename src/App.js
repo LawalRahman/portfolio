@@ -28,6 +28,7 @@ import css from "./img/css.svg";
 import next from "./img/next.png";
 import django from "./img/django.svg";
 import react from "./img/react.svg";
+import { CircularProgress } from "@mui/material";
 
 let theme = createTheme({
   typography: {
@@ -40,6 +41,10 @@ let theme = createTheme({
 theme = responsiveFontSizes(theme);
 
 export default function App() {
+  const [repo, setRepo] = React.useState([]);
+  fetch("https://api.github.com/users/LawalRahman/repos")
+    .then((resp) => resp.json())
+    .then((data) => setRepo(data.filter((item) => item.name !== "portfolio")));
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -166,109 +171,46 @@ export default function App() {
           </Typography>
           {/* End hero unit */}
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card sx={{ maxWidth: 300 }}>
-                <CardContent>
-                  <Box height={100} style={{ fontSize: "12px" }}>
-                    <Typography gutterBottom component="div">
-                      E-commerce
-                    </Typography>
-                    <Typography variant="p" color="text.secondary">
-                      App to viewitems, add them to cart and make payment
-                      online. Developed with Nextjs
-                    </Typography>
-                  </Box>
-                </CardContent>
-                <CardActions>
-                  <Link
-                    href="https://e-commerzonia.netlify.app/"
-                    underline="none"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <Button size="small">Visit</Button>
-                  </Link>
-                  {/* <Button size="small">Repo</Button> */}
-                </CardActions>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card sx={{ maxWidth: 300 }}>
-                <CardContent>
-                  <Box height={100} style={{ fontSize: "12px" }}>
-                    <Typography gutterBottom component="div">
-                      Forkify
-                    </Typography>
-                    <Typography variant="p" color="text.secondary">
-                      Search for any recipe. Developed with html, css and
-                      javascript
-                    </Typography>
-                  </Box>
-                </CardContent>
-                <CardActions>
-                  <Link
-                    href="https://forkify-rahman.netlify.app/#5ed6604591c37cdc054bcb33"
-                    underline="none"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <Button size="small">Visit</Button>
-                  </Link>
-                  {/* <Button size="small">Repo</Button> */}
-                </CardActions>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card sx={{ maxWidth: 300 }}>
-                <CardContent>
-                  <Box height={100} style={{ fontSize: "12px" }}>
-                    <Typography gutterBottom component="div">
-                      Meetup App
-                    </Typography>
-                    <Typography variant="p" color="text.secondary">
-                      Simple app to create, favorite and view meetups. Developed
-                      with react
-                    </Typography>
-                  </Box>
-                </CardContent>
-                <CardActions>
-                  <Link
-                    href="https://the-react-app.netlify.app/"
-                    underline="none"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <Button size="small">Visit</Button>
-                  </Link>
-                  {/* <Button size="small">Repo</Button> */}
-                </CardActions>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card sx={{ maxWidth: 300 }}>
-                <CardContent>
-                  <Box height={100} style={{ fontSize: "12px" }}>
-                    <Typography gutterBottom component="div">
-                      React Calculator
-                    </Typography>
-                    <Typography variant="p" color="text.secondary">
-                      Simple calculator build with react
-                    </Typography>
-                  </Box>
-                </CardContent>
-                <CardActions>
-                  <Link
-                    href="https://calculateur.netlify.app/"
-                    underline="none"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <Button size="small">Visit</Button>
-                  </Link>
-                  {/* <Button size="small">Repo</Button> */}
-                </CardActions>
-              </Card>
-            </Grid>
+            {repo ? (
+              repo.map((repository) => (
+                <Grid item xs={12} sm={6} md={4} key={repository.id}>
+                  <Card sx={{ maxWidth: 300 }}>
+                    <CardContent>
+                      <Box height={100} style={{ fontSize: "12px" }}>
+                        <Typography gutterBottom component="div">
+                          {repository.name.toUpperCase()}
+                        </Typography>
+                        <Typography variant="p" color="text.secondary">
+                          {repository.description}
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                    <CardActions>
+                      <Link
+                        href={repository.homepage}
+                        underline="none"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <Button size="small">Visit</Button>
+                      </Link>
+                      <Link
+                        href={repository.html_url}
+                        underline="none"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <Button size="small">Repo</Button>
+                      </Link>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))
+            ) : (
+              <Box sx={{ display: "flex" }}>
+                <CircularProgress />
+              </Box>
+            )}
           </Grid>
         </Container>
         <Container sx={{ py: 2 }} maxWidth="md" align="center">
