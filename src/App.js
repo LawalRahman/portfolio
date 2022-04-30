@@ -183,14 +183,16 @@ export default function App() {
                       </Box>
                     </CardContent>
                     <CardActions>
-                      <Link
-                        href={repository.homepage}
-                        underline="none"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <Button size="small">Visit</Button>
-                      </Link>
+                      {repository.homepage && (
+                        <Link
+                          href={repository.homepage}
+                          underline="none"
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          <Button size="small">Visit</Button>
+                        </Link>
+                      )}
                       <Link
                         href={repository.html_url}
                         underline="none"
