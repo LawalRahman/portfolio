@@ -92,13 +92,8 @@ export default function App() {
               >
                 <i className="fa fa-brands fa-linkedin"></i>
               </Link>
-              <Link
-                href="https://www.behance.net/rahmanlawal"
-                underline="none"
-                target="_blank"
-                rel="noopener"
-              >
-                <i className="fa fa-brands fa-behance"></i>
+              <Link underline="none" href="mailto:rahmanabimbina@gmail.com">
+                <i className="fa fa-envelope"></i>
               </Link>
             </Stack>
           </Typography>
@@ -123,7 +118,13 @@ export default function App() {
             >
               Hi! <div className="neu-text">I'm Rahman</div>
             </Typography>
-            <Typography variant="p" align="center" color="text.white" paragraph>
+            <Typography
+              variant="p"
+              align="center"
+              color="text.white"
+              paragraph
+              style={{ fontSize: "12px" }}
+            >
               I am result-driven and passionate about creating applications that
               seek to meet customer satisfaction.
             </Typography>
@@ -133,7 +134,15 @@ export default function App() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">
+              <Button
+                variant="contained"
+                sx={{
+                  fontSize: {
+                    sm: 12,
+                    xs: 10,
+                  },
+                }}
+              >
                 <Link
                   href="https://drive.google.com/file/d/1ruhEjfhBu7yZWE9DRQGgzbzT-8WRpk1u/view?usp=sharing"
                   underline="none"
@@ -141,10 +150,18 @@ export default function App() {
                   rel="noopener"
                   style={{ color: "white" }}
                 >
-                  Download CV
+                  Download CV <i class="fa fa-solid fa-download"></i>
                 </Link>
               </Button>
-              <Button variant="outlined">
+              <Button
+                variant="outlined"
+                sx={{
+                  fontSize: {
+                    sm: 12,
+                    xs: 10,
+                  },
+                }}
+              >
                 <Link
                   href="https://api.whatsapp.com/send/?phone=2347081838147"
                   underline="none"
@@ -152,6 +169,19 @@ export default function App() {
                   rel="noopener"
                 >
                   WhapsApp <i className="fa fa-brands fa-whatsapp"></i>
+                </Link>
+              </Button>
+              <Button
+                variant="outlined"
+                sx={{
+                  fontSize: {
+                    sm: 12,
+                    xs: 10,
+                  },
+                }}
+              >
+                <Link href="mailto:rahmanabimbina@gmail.com" underline="none">
+                  Send Mail <i className="fa fa-envelope"></i>
                 </Link>
               </Button>
             </Stack>
