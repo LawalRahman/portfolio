@@ -124,8 +124,8 @@ export default function App() {
               Hi! <div className="neu-text">I'm Rahman</div>
             </Typography>
             <Typography variant="p" align="center" color="text.white" paragraph>
-              I am result driven and passionate about creating applications that
-              seeks to meet customer satisfaction.
+              I am result-driven and passionate about creating applications that
+              seek to meet customer satisfaction.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -190,13 +190,13 @@ export default function App() {
               </Typography>
               <Typography style={{ fontSize: "12px" }}>
                 TDtech is a startup with the intention of providing software
-                solutionsto people but when I wasintroduced as one of their
-                firstset of employeesjust after my final year of project
+                solutions to people but when I was introduced as one of their
+                first set of employees just after my final year of project
                 defense, I wastasked to create a web app with the Django
-                framework though I had no background in it. My background wasin
+                framework though I had no background in it. My background was in
                 PHP. After brainstorming with my partner, we decided to build a
                 web app that enhances ordering and delivering food online. After
-                that, I wasintroduced to building an API using the Django REST
+                that, I was introduced to building an API using the Django REST
                 framework. In collaboration with my colleagues, we built an API
                 for the food delivery app. I was also involved in building the
                 mobile application using flutter. Ever since the deployment and
