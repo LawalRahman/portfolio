@@ -124,8 +124,8 @@ export default function App() {
               Hi! <div className="neu-text">I'm Rahman</div>
             </Typography>
             <Typography variant="p" align="center" color="text.white" paragraph>
-              I am result driven and passionate about creating web applications
-              that seeks to meet customer satisfaction.
+              I am result driven and passionate about creating applications that
+              seeks to meet customer satisfaction.
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -157,14 +157,201 @@ export default function App() {
             </Stack>
           </Container>
         </Box>
-
         <Container sx={{ pt: 2 }} maxWidth="md" align="center">
           <Typography
             variant="h3"
-            py={6}
+            py={3}
             style={{ textDecoration: "underline" }}
           >
-            Projects
+            Education
+          </Typography>
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            <Grid item xs={12} sm={12} md={12}>
+              <Typography style={{ fontSize: "12px" }}>
+                BSc. Computer Science, Univeristy of Ghana (2014-2018)
+              </Typography>
+            </Grid>
+          </Grid>
+        </Container>
+        <Container sx={{ pt: 2 }} maxWidth="md" align="center">
+          <Typography
+            variant="h3"
+            py={3}
+            style={{ textDecoration: "underline" }}
+          >
+            Experience
+          </Typography>
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            <Grid item xs={12} sm={12} md={12}>
+              <Typography variant="h6" style={{ fontWeight: "600" }}>
+                Software Developer @ TDTechnologies (2018-2021)
+              </Typography>
+              <Typography style={{ fontSize: "12px" }}>
+                TDtech is a startup with the intention of providing software
+                solutionsto people but when I wasintroduced as one of their
+                firstset of employeesjust after my final year of project
+                defense, I wastasked to create a web app with the Django
+                framework though I had no background in it. My background wasin
+                PHP. After brainstorming with my partner, we decided to build a
+                web app that enhances ordering and delivering food online. After
+                that, I wasintroduced to building an API using the Django REST
+                framework. In collaboration with my colleagues, we built an API
+                for the food delivery app. I was also involved in building the
+                mobile application using flutter. Ever since the deployment and
+                use of the app in 2019, I had the task of maintaining and
+                improving the functionalities of the app.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Container>
+        <Container sx={{ pt: 2 }} maxWidth="md" align="center">
+          <Typography
+            variant="h3"
+            py={3}
+            style={{ textDecoration: "underline" }}
+          >
+            Field Projects
+          </Typography>
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            <Grid item xs={12} sm={12} md={6}>
+              <Card>
+                <CardContent>
+                  <Box height={130} style={{ fontSize: "12px" }}>
+                    <Typography gutterBottom component="div">
+                      Foodjoint
+                    </Typography>
+                    <Typography variant="p" color="text.secondary">
+                      Implemented the user interfaces(UI), designed and
+                      implement the foodjoint API. Performed Unit Tests on both
+                      the API and the web app. Specified and performed Feature
+                      Deliverables Test plans. Used: Python with Django
+                      framework for the web app, Flutter framework for the
+                      mobile app, and Django Rest Framework for the API
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://foodjointgh.com"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6}>
+              <Card>
+                <CardContent>
+                  <Box height={130} style={{ fontSize: "12px" }}>
+                    <Typography gutterBottom component="div">
+                      Ezarlex
+                    </Typography>
+                    <Typography variant="p" color="text.secondary">
+                      I helped a client develop an e-commerce web application
+                      using django framework and django rest framework and
+                      integrated{" "}
+                      <Link
+                        href="https://paystack.com"
+                        underline="none"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        paystack{" "}
+                      </Link>
+                      payment system into the application.
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://ezarlex.com"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6}>
+              <Card>
+                <CardContent>
+                  <Box height={130} style={{ fontSize: "12px" }}>
+                    <Typography gutterBottom component="div">
+                      Gspecial
+                    </Typography>
+                    <Typography variant="p" color="text.secondary">
+                      I helped a client develop an e-commerce web application
+                      using django framework and django rest framework and
+                      integrated{" "}
+                      <Link
+                        href="https://paystack.com"
+                        underline="none"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        paystack{" "}
+                      </Link>
+                      payment system into the application.
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://gspecialgh.com/"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={12} md={6}>
+              <Card>
+                <CardContent>
+                  <Box height={130} style={{ fontSize: "12px" }}>
+                    <Typography gutterBottom component="div">
+                      Universal Admission System(First degree final project)
+                    </Typography>
+                    <Typography variant="p" color="text.secondary">
+                      I wrote a thesis and developed an application that allows
+                      students to apply to several universities over a single
+                      interface. The app used PHP to communicate with a MYSQL
+                      database. I integrated the stripe payment system into the
+                      app.
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://drive.google.com/drive/folders/1CSH8LpS6PQYljhUKgP-Nj77mDZcUP688?usp=sharing"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                </CardActions>
+              </Card>
+            </Grid>
+          </Grid>
+        </Container>
+        <Container sx={{ pt: 2 }} maxWidth="md" align="center">
+          <Typography
+            variant="h3"
+            py={3}
+            style={{ textDecoration: "underline" }}
+          >
+            Hobby Projects
           </Typography>
           {/* End hero unit */}
           <Grid container spacing={4}>
@@ -215,7 +402,7 @@ export default function App() {
         <Container sx={{ pt: 2 }} maxWidth="md" align="center">
           <Typography
             variant="h3"
-            py={6}
+            py={3}
             style={{ textDecoration: "underline" }}
           >
             Skills
