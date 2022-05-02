@@ -92,8 +92,19 @@ export default function App() {
               >
                 <i className="fa fa-brands fa-linkedin"></i>
               </Link>
-              <Link underline="none" href="mailto:rahmanabimbina@gmail.com">
-                <i className="fa fa-envelope"></i>
+              <Link
+                href="https://www.behance.net/rahmanlawal"
+                underline="none"
+                target="_blank"
+                rel="noopener"
+              >
+                <i className="fa fa-brands fa-behance"></i>
+              </Link>
+              <Link
+                underline="none"
+                href="https://stackoverflow.com/users/4083326/lawal-rahman-abimbola"
+              >
+                <i class="fa fa-stack-overflow"></i>
               </Link>
             </Stack>
           </Typography>
@@ -546,6 +557,12 @@ export default function App() {
               rel="noopener"
             >
               <i className="fa fa-brands fa-behance"></i>
+            </Link>
+            <Link
+              underline="none"
+              href="https://stackoverflow.com/users/4083326/lawal-rahman-abimbola"
+            >
+              <i class="fa fa-stack-overflow"></i>
             </Link>
           </Stack>
         </Typography>
