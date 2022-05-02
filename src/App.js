@@ -438,6 +438,39 @@ export default function App() {
                 <CircularProgress />
               </Box>
             )}
+            <Grid item xs={6} sm={4} md={3}>
+              <Card sx={{ maxWidth: 300 }}>
+                <CardContent>
+                  <Box height={100} style={{ fontSize: "12px" }}>
+                    <Typography gutterBottom component="div">
+                      XpressLogistics
+                    </Typography>
+                    <Typography variant="p" color="text.secondary">
+                      An online delivery app that allows user make dispatch,
+                      delivery or errand request.
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://xpresslogistics.herokuapp.com/"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                  <Link
+                    href="https://gitlab.com/rahmanlawal/xpress-logistics"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Repo</Button>
+                  </Link>
+                </CardActions>
+              </Card>
+            </Grid>
           </Grid>
         </Container>
         <Container sx={{ pt: 2 }} maxWidth="md" align="center">
