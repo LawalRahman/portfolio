@@ -104,7 +104,7 @@ export default function App() {
                 underline="none"
                 href="https://stackoverflow.com/users/4083326/lawal-rahman-abimbola"
               >
-                <i class="fa fa-stack-overflow"></i>
+                <i className="fa fa-stack-overflow"></i>
               </Link>
             </Stack>
           </Typography>
@@ -161,7 +161,7 @@ export default function App() {
                   rel="noopener"
                   style={{ color: "white" }}
                 >
-                  Download CV <i class="fa fa-solid fa-download"></i>
+                  Download CV <i className="fa fa-solid fa-download"></i>
                 </Link>
               </Button>
               <Button
@@ -230,19 +230,20 @@ export default function App() {
                 Software Developer @ TDTechnologies (2018-2021)
               </Typography>
               <Typography style={{ fontSize: "12px" }}>
-                TDtech is a startup with the intention of providing software
-                solutions to people but when I was introduced as one of their
-                first set of employees just after my final year of project
-                defense, I wastasked to create a web app with the Django
-                framework though I had no background in it. My background was in
-                PHP. After brainstorming with my partner, we decided to build a
-                web app that enhances ordering and delivering food online. After
-                that, I was introduced to building an API using the Django REST
-                framework. In collaboration with my colleagues, we built an API
-                for the food delivery app. I was also involved in building the
-                mobile application using flutter. Ever since the deployment and
-                use of the app in 2019, I had the task of maintaining and
-                improving the functionalities of the app.
+                TDtech is a startup that provide software solutions to customers
+                by creating apps to meet their demand. When I was introduced as
+                one of the first set of employees just after my final year of
+                project defense, I was tasked to create a web app with the
+                Django framework, though I had no background in it. My
+                background was in PHP. After brainstorming with my partner, we
+                decided to build a web app that enhances ordering and delivering
+                food online. After that, I was introduced to building an API
+                using the Django REST framework. In collaboration with my
+                colleagues, we built an API for the food delivery app. I was
+                also involved in building the mobile application using flutter.
+                Ever since the deployment and use of the app in 2019, I had the
+                task of maintaining and improving the functionalities of the
+                app.
               </Typography>
             </Grid>
           </Grid>
@@ -401,8 +402,13 @@ export default function App() {
                 <Grid item xs={6} sm={4} md={3} key={repository.id}>
                   <Card sx={{ maxWidth: 300 }}>
                     <CardContent>
-                      <Box height={100} style={{ fontSize: "12px" }}>
-                        <Typography gutterBottom component="div">
+                      <Box height={150} style={{ fontSize: "12px" }}>
+                        <Typography
+                          gutterBottom
+                          component="div"
+                          variant="h6"
+                          style={{ fontSize: "15px" }}
+                        >
                           {repository.name.toUpperCase()}
                         </Typography>
                         <Typography variant="p" color="text.secondary">
@@ -441,8 +447,13 @@ export default function App() {
             <Grid item xs={6} sm={4} md={3}>
               <Card sx={{ maxWidth: 300 }}>
                 <CardContent>
-                  <Box height={100} style={{ fontSize: "12px" }}>
-                    <Typography gutterBottom component="div">
+                  <Box height={150} style={{ fontSize: "12px" }}>
+                    <Typography
+                      gutterBottom
+                      component="div"
+                      variant="h6"
+                      style={{ fontSize: "15px" }}
+                    >
                       XpressLogistics
                     </Typography>
                     <Typography variant="p" color="text.secondary">
@@ -462,6 +473,45 @@ export default function App() {
                   </Link>
                   <Link
                     href="https://gitlab.com/rahmanlawal/xpress-logistics"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Repo</Button>
+                  </Link>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid item xs={6} sm={4} md={3}>
+              <Card sx={{ maxWidth: 300 }}>
+                <CardContent>
+                  <Box height={150} style={{ fontSize: "12px" }}>
+                    <Typography
+                      gutterBottom
+                      component="div"
+                      variant="h6"
+                      style={{ fontSize: "15px" }}
+                    >
+                      UUID Generator API
+                    </Typography>
+                    <Typography variant="p" color="text.secondary">
+                      An API that generates a new UUID when a request is sent
+                      and returns a list of all generated UUIDs. Built with
+                      django rest api
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Link
+                    href="https://simpuuidapp.herokuapp.com/"
+                    underline="none"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Button size="small">Visit</Button>
+                  </Link>
+                  <Link
+                    href="https://gitlab.com/rahmanlawal/simple-uuidapi"
                     underline="none"
                     target="_blank"
                     rel="noopener"
@@ -595,7 +645,7 @@ export default function App() {
               underline="none"
               href="https://stackoverflow.com/users/4083326/lawal-rahman-abimbola"
             >
-              <i class="fa fa-stack-overflow"></i>
+              <i className="fa fa-stack-overflow"></i>
             </Link>
           </Stack>
         </Typography>
