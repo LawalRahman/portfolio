@@ -132,15 +132,15 @@ export default function App() {
                 <Typography
                   component="h1"
                   variant="h2"
-                  align="center"
+                  // align="center"
                   color="text.primary"
                   gutterBottom
                 >
-                  Hi! <div className="neu-text">I'm Rahman</div>
+                  Hi! <div>I'm Rahman</div>
                 </Typography>
                 <Typography
                   variant="p"
-                  align="center"
+                  // align="center"
                   color="text.white"
                   paragraph
                   style={{ fontSize: "12px" }}
@@ -152,7 +152,7 @@ export default function App() {
                   sx={{ pt: 4 }}
                   direction="row"
                   spacing={2}
-                  justifyContent="center"
+                  // justifyContent="center"
                 >
                   <Button
                     variant="contained"
@@ -210,11 +210,11 @@ export default function App() {
                 </Stack>
               </Container>
             </Box>
-            <Container sx={{ pt: 2 }} maxWidth="md" align="center">
+            <Container sx={{ pt: 2 }} maxWidth="md">
               <Typography
                 variant="h3"
                 py={3}
-                style={{ textDecoration: "underline" }}
+                style={{ textDecoration: "underline", textAlign: "center" }}
               >
                 Education
               </Typography>
@@ -227,11 +227,11 @@ export default function App() {
                 </Grid>
               </Grid>
             </Container>
-            <Container sx={{ pt: 2 }} maxWidth="md" align="center">
+            <Container sx={{ pt: 2 }} maxWidth="md">
               <Typography
                 variant="h3"
                 py={3}
-                style={{ textDecoration: "underline" }}
+                style={{ textDecoration: "underline", textAlign: "center" }}
               >
                 Experience
               </Typography>
@@ -260,11 +260,11 @@ export default function App() {
                 </Grid>
               </Grid>
             </Container>
-            <Container sx={{ pt: 2 }} maxWidth="md" align="center">
+            <Container sx={{ pt: 2 }} maxWidth="md">
               <Typography
                 variant="h3"
                 py={3}
-                style={{ textDecoration: "underline" }}
+                style={{ textDecoration: "underline", textAlign: "center" }}
               >
                 Field Projects
               </Typography>
@@ -400,11 +400,11 @@ export default function App() {
                 </Grid>
               </Grid>
             </Container>
-            <Container sx={{ pt: 2 }} maxWidth="md" align="center">
+            <Container sx={{ pt: 2 }} maxWidth="md">
               <Typography
                 variant="h3"
                 py={3}
-                style={{ textDecoration: "underline" }}
+                style={{ textDecoration: "underline", textAlign: "center" }}
               >
                 Hobby Projects
               </Typography>
@@ -536,11 +536,11 @@ export default function App() {
                 </Grid>
               </Grid>
             </Container>
-            <Container sx={{ pt: 2 }} maxWidth="md" align="center">
+            <Container sx={{ pt: 2 }} maxWidth="md">
               <Typography
                 variant="h3"
                 py={3}
-                style={{ textDecoration: "underline" }}
+                style={{ textDecoration: "underline", textAlign: "center" }}
               >
                 Skills
               </Typography>
@@ -663,7 +663,7 @@ export default function App() {
               </Stack>
             </Typography>
             <Typography variant="p" align="center" color="text.white" paragraph>
-              rahmanlawal &copy; 2022
+              rahmanlawal &copy; {new Date().getFullYear()}
             </Typography>
           </Box>
           {/* End footer */}
