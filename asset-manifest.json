@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ed5b2f38.css",
-    "main.js": "/static/js/main.f620a71e.js",
+    "main.js": "/static/js/main.fd6a35cc.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/kudiex1.png": "/static/media/kudiex1.21f475648f0bd9e37266.png",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
@@ -55,11 +55,11 @@
     "static/media/logo.PNG": "/static/media/logo.c6895834dcdf22fee347.PNG",
     "index.html": "/index.html",
     "main.ed5b2f38.css.map": "/static/css/main.ed5b2f38.css.map",
-    "main.f620a71e.js.map": "/static/js/main.f620a71e.js.map",
+    "main.fd6a35cc.js.map": "/static/js/main.fd6a35cc.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ed5b2f38.css",
-    "static/js/main.f620a71e.js"
+    "static/js/main.fd6a35cc.js"
   ]
 }
