@@ -41,9 +41,7 @@ export default function CustomTimeline({
               <Chip label={time} />
             </Box>
             <Typography fontWeight={"bold"}>{title}</Typography>
-            <Typography sx={{ textAlign: "justify", wordSpacing: -4 }}>
-              {text}
-            </Typography>
+            <Typography sx={{ textAlign: "inherit" }}>{text}</Typography>
           </Stack>
         </TimelineContent>
       </TimelineItem>

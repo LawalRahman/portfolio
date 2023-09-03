@@ -74,22 +74,18 @@ const HomePage = () => {
                 minWidth: "70%",
                 textAlign: {
                   xs: "center",
-                  md: "justify",
-                },
-                wordSpacing: {
-                  md: -2,
+                  md: "inherit",
                 },
               }}
             >
-              {`Graduate of Computer Science and an innovative tech professional
+              Graduate of Computer Science and an innovative tech professional
               with 3+ years of experience working as a computer programmer.
-              Capable of working across the full-stack of software
-              development. Valuable team member who has experience diagnosing
-              problems and developing solutions. Extensive expertise in
-              networking systems and working with mainframe computers. Talented
-              leader with unique ideas and a history of successful contributions
-              in the field. I am result-driven and passionate about creating
-              applications that seek to meet user requirements.`}
+              Capable of working across the full-stack of software development.
+              Valuable team member who has experience diagnosing problems and
+              developing solutions. Result-driven and passionate about creating
+              applications that seek to meet user requirements. Talented leader
+              with unique ideas and a history of successful contributions in the
+              field.
             </Typography>
           </Box>
         </Box>
