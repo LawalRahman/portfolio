@@ -1,4 +1,13 @@
-import { Box, Modal, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+  Stack,
+  Typography,
+  styled,
+} from "@mui/material";
 import { useState } from "react";
 import Work from "../components/Work";
 import {
@@ -9,15 +18,22 @@ import {
   kudiexImages,
 } from "../img";
 import Carousel from "react-material-ui-carousel";
+import CloseIcon from "@mui/icons-material/Close";
 
 const PortPage = () => {
   const [projectImages, setProjectImages] = useState<string[]>([]);
+  const [modalTitle, setModalTitle] = useState<string>("");
   const [openModal, setOpenModal] = useState(false);
-  const handleOpenModal: (x: string[]) => void = (projectImgs: string[]) => {
+  const handleOpenModal: (x: string[], title: string) => void = (
+    projectImgs: string[],
+    title: string
+  ) => {
     setOpenModal(true);
+    setModalTitle(title);
     setProjectImages(projectImgs);
   };
   const handleCloseModal = () => setOpenModal(false);
+
   return (
     <>
       <Stack
@@ -80,31 +96,35 @@ const PortPage = () => {
           <Work
             name={"Food Delivery App"}
             description={"REACT, AWS"}
-            onClick={() => handleOpenModal(foodjointImages)}
+            onClick={() =>
+              handleOpenModal(foodjointImages, "Food Delivery App")
+            }
             headerImage={foodjointImages[0]}
           />
           <Work
-            name={"money/Crypto Transfer App"}
+            name={"Money/Crypto Transfer App"}
             description={"ANGULAR, AWS"}
-            onClick={() => handleOpenModal(kudiexImages)}
+            onClick={() =>
+              handleOpenModal(kudiexImages, "Money/Crypto Transfer App")
+            }
             headerImage={kudiexImages[0]}
           />
           <Work
             name={"Crypto Exchange App"}
             description={"REACT-NATIVE"}
-            onClick={() => handleOpenModal(cryptoImages)}
+            onClick={() => handleOpenModal(cryptoImages, "Crypto Exchange App")}
             headerImage={cryptoImages[0]}
           />
           <Work
-            name={"Crypto Exchange App"}
+            name={"Job Search App"}
             description={"REACT_NATIVE"}
-            onClick={() => handleOpenModal(jobImages)}
+            onClick={() => handleOpenModal(jobImages, "Job Search App")}
             headerImage={jobImages[0]}
           />
           <Work
-            name={"Crypto Exchange App"}
+            name={"Dating App"}
             description={"REACT"}
-            onClick={() => handleOpenModal(datingImages)}
+            onClick={() => handleOpenModal(datingImages, "Dating App")}
             headerImage={datingImages[1]}
           />
         </Stack>
@@ -113,6 +133,7 @@ const PortPage = () => {
         open={openModal}
         handleCloseModal={handleCloseModal}
         displayImages={projectImages}
+        title={modalTitle}
       />
     </>
   );
@@ -120,15 +141,30 @@ const PortPage = () => {
 
 export default PortPage;
 
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(2),
+  },
+  "& .MuiDialogActions-root": {
+    padding: theme.spacing(1),
+  },
+}));
+
 type ModalProps = {
   open: boolean;
   handleCloseModal: () => void;
   displayImages: string[];
+  title: string;
 };
 
-function BasicModal({ open, handleCloseModal, displayImages }: ModalProps) {
+function BasicModal({
+  open,
+  handleCloseModal,
+  displayImages,
+  title,
+}: ModalProps) {
   return (
-    <Modal
+    <BootstrapDialog
       open={open}
       onClose={handleCloseModal}
       sx={{
@@ -137,26 +173,46 @@ function BasicModal({ open, handleCloseModal, displayImages }: ModalProps) {
         alignItems: "center",
       }}
     >
-      <Box
+      <DialogTitle
+        sx={{ m: 0, p: 2, fontSize: { xs: 10, md: 15 }, fontWeight: "bold" }}
+        id="dialog-title"
+      >
+        {title}
+      </DialogTitle>
+      <IconButton
+        aria-label="close"
+        onClick={handleCloseModal}
         sx={{
-          width: 400,
+          position: "absolute",
+          right: 8,
+          top: 8,
+          color: (theme) => theme.palette.grey[500],
         }}
       >
-        <Carousel animation="slide">
-          {displayImages.map((item: any, i: number) => (
-            <Box
-              key={i}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <img alt={item} src={item} width={"80%"} height={"80%"} />
-            </Box>
-          ))}
-        </Carousel>
-      </Box>
-    </Modal>
+        <CloseIcon />
+      </IconButton>
+      <DialogContent dividers>
+        <Box
+          sx={{
+            width: 350,
+          }}
+        >
+          <Carousel animation="slide">
+            {displayImages.map((item: any, i: number) => (
+              <Box
+                key={i}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <img alt={item} src={item} width={"80%"} height={"80%"} />
+              </Box>
+            ))}
+          </Carousel>
+        </Box>
+      </DialogContent>
+    </BootstrapDialog>
   );
 }

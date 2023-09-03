@@ -33,21 +33,40 @@ const HomePage = () => {
             flexDirection: "column",
           }}
         >
-          <Typography
-            color={"primary"}
+          <Box
             sx={{
-              textAlign: {
+              display: "flex",
+              justifyContent: {
                 xs: "center",
-                md: "left",
+                md: "start",
               },
-              fontWeight: "bolder",
-              fontSize: {
-                md: 40,
-                xs: 30,
-              },
+              alignItems: "center",
               width: "100%",
+              gap: 1,
             }}
-          >{`I'm Rahman 🇳🇬`}</Typography>
+          >
+            <Typography
+              sx={{
+                fontWeight: "bolder",
+                fontSize: {
+                  md: 40,
+                  xs: 30,
+                },
+                textTransform: "uppercase",
+              }}
+            >{`I'm`}</Typography>
+            <Typography
+              color={"primary"}
+              sx={{
+                fontWeight: "bolder",
+                fontSize: {
+                  md: 40,
+                  xs: 30,
+                },
+                textTransform: "uppercase",
+              }}
+            >{`Rahman 🇳🇬`}</Typography>
+          </Box>
           <Typography
             sx={{
               textAlign: {
@@ -56,10 +75,11 @@ const HomePage = () => {
               },
               fontWeight: "bolder",
               fontSize: {
-                md: 40,
+                md: 30,
                 xs: 30,
               },
               width: "100%",
+              textTransform: "uppercase",
             }}
           >
             Software Developer
@@ -79,7 +99,7 @@ const HomePage = () => {
               }}
             >
               Graduate of Computer Science and an innovative tech professional
-              with 3+ years of experience working as a computer programmer.
+              with 3+ years of experience working as a software developer.
               Capable of working across the full-stack of software development.
               Valuable team member who has experience diagnosing problems and
               developing solutions. Result-driven and passionate about creating

@@ -22,7 +22,8 @@ export default function Work({
       sx={{
         width: {
           xs: "100%",
-          md: 345,
+          sm: 250,
+          md: 300,
         },
         height: 250,
         cursor: "pointer",
@@ -34,7 +35,7 @@ export default function Work({
         alt="avatar"
         height="150"
         image={headerImage}
-        sx={{ objectFit: "contain" }}
+        sx={{ objectFit: "contain", py: 1 }}
       />
       <CardContent>
         <Typography gutterBottom fontWeight={"bold"}>
