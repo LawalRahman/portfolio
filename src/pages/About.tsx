@@ -67,7 +67,7 @@ const AboutPage = () => {
           <CustomButton
             text={"Download CV"}
             icon={<FileDownloadIcon />}
-            link="https://drive.google.com/file/d/1ruhEjfhBu7yZWE9DRQGgzbzT-8WRpk1u/view?usp=sharing"
+            link="https://drive.google.com/file/d/1jqDeF4Bc0jhCOtT-913XDlcbm_UflUZe/view?usp=sharing"
             darkMode={darkMode}
           />
         </Box>
