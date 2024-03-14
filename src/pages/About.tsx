@@ -116,16 +116,13 @@ const AboutPage = () => {
             <Skill value={70} label="JAVASCRIPT" />
             <Skill value={70} label="PYTHON" />
             <Skill value={50} label="JAVA" />
-            <Skill value={30} label="C#" />
             <Skill value={30} label="DART" />
-            <Skill value={30} label="PHP" />
             <Skill value={60} label="REACT" />
             <Skill value={50} label="ANGULAR" />
             <Skill value={60} label="DJANGO" />
             <Skill value={30} label="FLUTTER" />
             <Skill value={50} label="REACT-NATIVE" />
             <Skill value={60} label="MYSQL" />
-            <Skill value={60} label="MONGODB" />
           </Box>
         </Stack>
         <Stack
