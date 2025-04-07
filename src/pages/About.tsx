@@ -1,12 +1,12 @@
-import { Box, Stack, Typography } from "@mui/material";
-import CustomButton from "../components/CustomButton";
-import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import SchoolIcon from "@mui/icons-material/School";
-import Skill from "../components/Skill";
+import { Box, Stack, Typography } from "@mui/material";
 import { useContext } from "react";
-import { Store } from "../store";
+import CustomButton from "../components/CustomButton";
 import CustomTimeline from "../components/CustomTimeLine";
+import Skill from "../components/Skill";
+import { Store } from "../store";
 
 const AboutPage = () => {
   const { state } = useContext(Store);
@@ -111,18 +111,18 @@ const AboutPage = () => {
               alignItems: "center",
             }}
           >
-            <Skill value={70} label="HTML" />
-            <Skill value={70} label="CSS" />
-            <Skill value={70} label="JAVASCRIPT" />
-            <Skill value={70} label="PYTHON" />
-            <Skill value={50} label="JAVA" />
-            <Skill value={30} label="DART" />
-            <Skill value={60} label="REACT" />
-            <Skill value={50} label="ANGULAR" />
-            <Skill value={60} label="DJANGO" />
-            <Skill value={30} label="FLUTTER" />
-            <Skill value={50} label="REACT-NATIVE" />
-            <Skill value={60} label="MYSQL" />
+            <Skill value={100} label="HTML" />
+            <Skill value={100} label="CSS" />
+            <Skill value={100} label="JAVASCRIPT" />
+            <Skill value={100} label="PYTHON" />
+            <Skill value={100} label="JAVA" />
+            <Skill value={100} label="DART" />
+            <Skill value={100} label="REACT" />
+            <Skill value={100} label="ANGULAR" />
+            <Skill value={100} label="DJANGO" />
+            <Skill value={100} label="FLUTTER" />
+            <Skill value={100} label="REACT-NATIVE" />
+            <Skill value={100} label="MYSQL" />
           </Box>
         </Stack>
         <Stack
@@ -167,26 +167,112 @@ const AboutPage = () => {
                 icon={<BusinessCenterIcon />}
                 time={"2018 - 2021"}
                 title={"SOFTWARE DEVELOPER - TDTECHNOLOGIES"}
-                text={`TDtech is a startup that provide software solutions to customers by
-                creating apps to meet their demand. When I was introduced as one of
-                the first set of employees just after my final year of project
-                defense, I was tasked to create a web app with the Django framework,
-                though I had no background in it. My background was in PHP. After
-                brainstorming with my partner, we decided to build a web app that
-                enhances ordering and delivering food online. After that, I was
-                introduced to building an API using the Django REST framework. In
-                collaboration with my colleagues, we built an API for the food
-                delivery app. I was also involved in building the mobile application
-                using flutter. Ever since the deployment and use of the app in 2019, I
-                had the task of maintaining and improving the functionalities of the
-                app.`}
+                text={`TDtech is a startup focused on delivering custom software solutions tailored to client needs. I joined the company as one of its first employees shortly after completing my final year project defense. Although my background was in PHP, I was immediately tasked with developing a web application using the Django framework — a technology I had no prior experience with.
+                        Working closely with a teammate, we conceptualized and developed a food ordering and delivery platform, marking my introduction to Python and Django. Following the successful launch of the web app, I transitioned to building the backend API using Django REST Framework in collaboration with other developers on the team. I also contributed to the development of the mobile application using Flutter, ensuring a consistent and integrated experience across platforms.
+                        Since the initial deployment of the app in 2019, I have been actively responsible for maintaining and enhancing its functionality, implementing feature upgrades, and ensuring overall performance and stability.`}
               />
               <CustomTimeline
                 icon={<BusinessCenterIcon />}
                 time={"2022 - PRESENT"}
-                title={"FREELANCE"}
-                text={`For over a year, I have worked as a freelance developer. During this period,
-                I have worked using Angular, React, a little bit of AWS, React-Native and Flutter.`}
+                title={
+                  "FREELANCE & CONTRACT-BASED | JAN 2022 – PRESENT | React, Django REST Framework, PostgreSQL, Flutter, Paystack, QR Code APIs"
+                }
+                text={
+                  <Box sx={{ p: 0 }}>
+                    <Box sx={{ mt: 0 }}>
+                      <Typography gutterBottom sx={{ fontWeight: "bold" }}>
+                        Hotel Reservation App (Ministry of Finance, Côte
+                        d'Ivoire, 2025)
+                      </Typography>
+                      <Typography gutterBottom>
+                        Built a web app for managing hotel bookings during the
+                        Annual Meeting Conference. Used <strong>React</strong>{" "}
+                        for the frontend and{" "}
+                        <strong>Django REST Framework</strong> with{" "}
+                        <strong>PostgreSQL</strong> for the backend. Generated
+                        and validated QR codes for attendee bookings.
+                      </Typography>
+                      <Typography display="block" gutterBottom>
+                        ➤ Delivered in collaboration with a private firm.
+                      </Typography>
+                    </Box>
+
+                    <Box sx={{ mt: 3 }}>
+                      <Typography gutterBottom sx={{ fontWeight: "bold" }}>
+                        Church Event Management Platform
+                      </Typography>
+                      <Typography gutterBottom>
+                        Developed an app for member registration, accommodation
+                        booking, and QR-based check-ins. Integrated{" "}
+                        <strong>Paystack</strong>, facilitating over{" "}
+                        <strong>$1 million USD</strong> in payments.
+                      </Typography>
+                      <Typography display="block" gutterBottom>
+                        ➤ Tech: React, Django REST Framework, QR code
+                        generation.
+                      </Typography>
+                    </Box>
+
+                    <Box sx={{ mt: 3 }}>
+                      <Typography gutterBottom sx={{ fontWeight: "bold" }}>
+                        Product & Student Verification System
+                      </Typography>
+                      <Typography gutterBottom>
+                        Built a full-stack system for companies and institutions
+                        to verify products or student records using{" "}
+                        <strong>QR codes</strong>. Frontend in{" "}
+                        <strong>React</strong>, backend in{" "}
+                        <strong>Django REST</strong>.
+                      </Typography>
+                      <Typography display="block" gutterBottom>
+                        ➤ Collaborated with a teammate for the mobile app
+                        counterpart.
+                      </Typography>
+                    </Box>
+
+                    <Box sx={{ mt: 3 }}>
+                      <Typography gutterBottom sx={{ fontWeight: "bold" }}>
+                        FoodJoint – Restaurant & Delivery App
+                      </Typography>
+                      <Typography gutterBottom>
+                        Created APIs and admin-facing UIs for a food delivery
+                        app. Worked on <strong>feature delivery testing</strong>
+                        , <strong>unit tests</strong>, and{" "}
+                        <strong>UI implementation</strong>.
+                      </Typography>
+                      <Typography display="block" gutterBottom>
+                        ➤ Tech: React (admin), Django REST Framework, Flutter
+                        (mobile app).
+                      </Typography>
+                    </Box>
+
+                    <Box sx={{ mt: 3 }}>
+                      <Typography gutterBottom sx={{ fontWeight: "bold" }}>
+                        Crypto & Fiat Exchange UI
+                      </Typography>
+                      <Typography gutterBottom>
+                        Built the <strong>frontend interface in React</strong>{" "}
+                        for a cryptocurrency exchange application.
+                      </Typography>
+                      <Typography display="block" gutterBottom>
+                        ➤ Focused on user experience, crypto/fiat conversion UI,
+                        and responsive layout.
+                      </Typography>
+                    </Box>
+
+                    <Box sx={{ mt: 3 }}>
+                      <Typography gutterBottom sx={{ fontWeight: "bold" }}>
+                        Apartment Finder App
+                      </Typography>
+                      <Typography gutterBottom>
+                        Developed a web app for searching vacant apartments by
+                        proximity. Built with <strong>React</strong> and{" "}
+                        <strong>Django REST</strong>, with support for
+                        location-based filtering.
+                      </Typography>
+                    </Box>
+                  </Box>
+                }
               />
             </Box>
             <Box sx={{ flexBasis: 0, flexGrow: 1 }}>

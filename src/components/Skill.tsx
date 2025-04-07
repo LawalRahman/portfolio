@@ -1,8 +1,8 @@
+import Box from "@mui/material/Box";
 import CircularProgress, {
   CircularProgressProps,
 } from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
 
 export default function Skill(
   props: CircularProgressProps & { value: number; label: string }
@@ -41,7 +41,7 @@ export default function Skill(
           variant="caption"
           component="div"
           sx={{
-            fontSize: 20,
+            fontSize: 12,
             fontWeight: "bold",
             // transform: "scale(1)",
             transition: "all 0.3s ease-in-out 0.2s",
@@ -51,7 +51,8 @@ export default function Skill(
             },
           }}
         >
-          {`${Math.round(props.value)}%`}
+          {/* {`${Math.round(props.value)}%`} */}
+          {props.label}
         </Typography>
       </Box>
       <Box
@@ -73,7 +74,7 @@ export default function Skill(
             fontWeight: "bold",
           }}
         >
-          {props.label}
+          {/* {props.label} */}
         </Typography>
       </Box>
     </Box>
