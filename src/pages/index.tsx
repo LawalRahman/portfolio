@@ -9,6 +9,7 @@ import HomePage from "./Home";
 import SideNav from "../components/SideNav";
 import PortPage from "./Portfolio";
 import ContactPage from "./Contact";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const SCREENS: any = {
   home: <HomePage />,
@@ -20,97 +21,105 @@ export const SCREENS: any = {
 function renderSwitch(currentPage: any) {
   switch (currentPage) {
     case "home":
-      return <>{SCREENS.home}</>;
+      return SCREENS.home;
     case "about":
-      return <>{SCREENS.about}</>;
+      return SCREENS.about;
     case "portfolio":
-      return <>{SCREENS.portfolio}</>;
+      return SCREENS.portfolio;
     case "contact":
-      return <>{SCREENS.contact}</>;
-
+      return SCREENS.contact;
     default:
-      return <>{SCREENS.home}</>;
+      return SCREENS.home;
   }
 }
 
 const Index = () => {
   const { state, dispatch } = useContext(Store);
   const { darkMode, currentPage } = state;
-  // const [screen, setScreen] = useState<any>([SCREENS[currentPage]]);
+
   const switchThemeHandler = function () {
     dispatch({ type: darkMode ? "DARK_MODE_OFF" : "DARK_MODE_ON" });
     const newDarkMode = !darkMode ? "ON" : "OFF";
     Cookies.set("darkMode", newDarkMode);
   };
-  const handleSetScreen = (item: any) => {
-    // setScreen(item);
-  };
-  // console.log(screens);
+
+  const handleSetScreen = () => {};
+
   return (
-    <>
+    <Box
+      sx={{
+        display: "flex",
+        width: "100%",
+        minHeight: "100vh",
+        bgcolor: "background.default",
+        px: {
+          xs: 2,
+          md: 10,
+        },
+        pb: {
+          xs: 12,
+          md: 5,
+        },
+        pt: {
+          xs: 3,
+          md: 5,
+        },
+        flexDirection: "column",
+        position: "relative",
+        color: "text.primary",
+        overflowX: "hidden",
+      }}
+    >
+      <TopNav switchThemeHandler={switchThemeHandler} />
+
       <Box
+        component="main"
         sx={{
+          flexGrow: 1,
           display: "flex",
-          width: "100%",
-          minHeight: "100vh",
-          bgcolor: "background.default",
-          px: {
-            xs: 3,
-            md: 10,
-          },
-          pb: {
-            xs: 15,
-          },
-          pt: {
-            xs: 3,
-            md: 5,
-          },
           flexDirection: "column",
-          position: "relative",
-          color: "text.primary",
+          justifyContent: "center",
+          width: "100%",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          pt: { xs: 8, md: 4 },
         }}
       >
-        <Box>
-          <TopNav switchThemeHandler={switchThemeHandler} />
-        </Box>
-        <Box
-          sx={{
-            margin: "0px auto",
-            pt: 5,
-          }}
-        >
-          {renderSwitch(currentPage)}
-        </Box>
-        {/* <TransitionGroup>
-          {screens.map((page: any, i: number) => (
-            <Slide direction="down" key={i} timeout={1000}>
-              {renderSwitch(page, currentPage)}
-            </Slide>
-          ))}
-        </TransitionGroup> */}
-
-        <Box
-          sx={{
-            display: {
-              xs: "block",
-              md: "none",
-            },
-          }}
-        >
-          <BottomNav handleSetScreen={handleSetScreen} />
-        </Box>
-        <Box
-          sx={{
-            display: {
-              xs: "none",
-              md: "block",
-            },
-          }}
-        >
-          <SideNav handleSetScreen={handleSetScreen} />
-        </Box>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            style={{ width: "100%" }}
+          >
+            {renderSwitch(currentPage)}
+          </motion.div>
+        </AnimatePresence>
       </Box>
-    </>
+
+      <Box
+        sx={{
+          display: {
+            xs: "block",
+            md: "none",
+          },
+        }}
+      >
+        <BottomNav handleSetScreen={handleSetScreen} />
+      </Box>
+      <Box
+        sx={{
+          display: {
+            xs: "none",
+            md: "block",
+          },
+        }}
+      >
+        <SideNav handleSetScreen={handleSetScreen} />
+      </Box>
+    </Box>
   );
 };
 

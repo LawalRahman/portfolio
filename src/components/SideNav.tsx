@@ -1,221 +1,93 @@
-// import {
-//   BottomNavigation,
-//   BottomNavigationAction,
-//   Box,
-//   Fab,
-//   Grow,
-//   colors,
-// } from "@mui/material";
-// import ContactPageIcon from "@mui/icons-material/ContactPage";
-// import HomeIcon from "@mui/icons-material/Home";
-// import PersonIcon from "@mui/icons-material/Person";
-// import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-// import { useContext, useState } from "react";
-// import { Store } from "../store";
-// import { primaryColor } from "./CustomButton";
-// import Cookies from "js-cookie";
-// import HomePage from "../pages/Home";
-// import AboutPage from "../pages/About";
-
-// type SideNavProps = {
-//   handleSetScreen: any;
-// };
-
-// const fabStyle = {
-//   display: "flex",
-//   justifySelf: "flex-start",
-//   bgcolor: "background.default",
-// };
-
-// const SideNav = ({ handleSetScreen }: SideNavProps) => {
-//   const { state, dispatch } = useContext(Store);
-//   const { currentPage, darkMode } = state;
-//   const [value, setValue] = useState(currentPage || "home");
-//   const handleChange = (newValue: string) => {
-//     setValue(newValue);
-//     Cookies.set("page", newValue);
-//     dispatch({ type: "CHANGE_PAGE", payload: newValue });
-//     if (newValue === "home") {
-//       handleSetScreen(<HomePage />);
-//     } else if (newValue === "about") {
-//       handleSetScreen(<AboutPage />);
-//     } else if (newValue === "portfolio") {
-//       handleSetScreen(<AboutPage />);
-//     } else {
-//       handleSetScreen(<AboutPage />);
-//     }
-//   };
-//   return (
-//     <Box
-//       sx={{
-//         position: "fixed",
-//         right: 40,
-//         bottom: "30%",
-//         // backgroundColor: "none",
-//         // width: "10%",
-//         display: "flex",
-//         flexDirection: "column",
-//         gap: 2,
-//         // border: "1px solid red",
-//       }}
-//     >
-//       <Grow in={true} timeout={500}>
-//         <Fab
-//           aria-label="home"
-//           color={darkMode ? "primary" : "primary"}
-//           sx={{
-//             ...fabStyle,
-//             color: darkMode ? "white" : "default",
-//           }}
-//           onClick={() => handleChange("home")}
-//         >
-//           <HomeIcon
-//             color="primary"
-//             sx={{ color: darkMode ? "white" : "black" }}
-//           />
-//         </Fab>
-//       </Grow>
-//       <Grow in={true} timeout={1000}>
-//         <Fab
-//           aria-label="about"
-//           color={value === "about" ? "primary" : "default"}
-//           sx={{
-//             ...fabStyle,
-//             // color: value === "about" ? "white" : "default",
-//           }}
-//           onClick={() => handleChange("about")}
-//         >
-//           <PersonIcon />
-//         </Fab>
-//       </Grow>
-//       <Grow in={true} timeout={1500}>
-//         <Fab
-//           aria-label="portfolio"
-//           color={value === "portfolio" ? "primary" : "default"}
-//           sx={{
-//             ...fabStyle,
-//             background: value === "portfolio" ? primaryColor : "default",
-//           }}
-//           onClick={() => handleChange("portfolio")}
-//         >
-//           <BusinessCenterIcon />
-//         </Fab>
-//       </Grow>
-//       <Grow in={true} timeout={2000}>
-//         <Fab
-//           aria-label="contact"
-//           color={value === "contact" ? "primary" : "default"}
-//           sx={{
-//             ...fabStyle,
-//             background: value === "contact" ? primaryColor : "default",
-//           }}
-//           onClick={() => handleChange("contact")}
-//         >
-//           <ContactPageIcon />
-//         </Fab>
-//       </Grow>
-//     </Box>
-//   );
-// };
-
-// export default SideNav;
-
-import {
-  BottomNavigation,
-  BottomNavigationAction,
-  Box,
-  Grow,
-} from "@mui/material";
+import { Box, IconButton, Tooltip, useTheme } from "@mui/material";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Store } from "../store";
 import Cookies from "js-cookie";
-import HomePage from "../pages/Home";
-import AboutPage from "../pages/About";
-import PortPage from "../pages/Portfolio";
-import ContactPage from "../pages/Contact";
+import { motion } from "framer-motion";
 
-type SideNavProps = {
-  handleSetScreen: any;
-};
+const navItems = [
+  { id: "home", icon: <HomeIcon />, label: "Home" },
+  { id: "about", icon: <PersonIcon />, label: "About" },
+  { id: "portfolio", icon: <BusinessCenterIcon />, label: "Portfolio" },
+  { id: "contact", icon: <ContactPageIcon />, label: "Contact" },
+];
 
-const SideNav = ({ handleSetScreen }: SideNavProps) => {
+const SideNav = ({ handleSetScreen }: { handleSetScreen: any }) => {
   const { state, dispatch } = useContext(Store);
+  const theme = useTheme();
   const { currentPage } = state;
-  const [value, setValue] = useState(currentPage || 0);
-  const handleChange = (
-    event: React.SyntheticEvent<Element, Event>,
-    newValue: string
-  ) => {
-    setValue(newValue);
+  const isDark = theme.palette.mode === "dark";
+
+  const handleChange = (newValue: string) => {
     Cookies.set("page", newValue);
     dispatch({ type: "CHANGE_PAGE", payload: newValue });
-    if (newValue === "home") {
-      handleSetScreen(<HomePage />);
-    } else if (newValue === "about") {
-      handleSetScreen(<AboutPage />);
-    } else if (newValue === "portfolio") {
-      handleSetScreen(<PortPage />);
-    } else {
-      handleSetScreen(<ContactPage />);
-    }
   };
+
   return (
     <Box
       sx={{
         position: "fixed",
         right: 30,
-        top: "40%",
+        top: "50%",
+        transform: "translateY(-50%)",
         display: "flex",
         flexDirection: "column",
-        // width: "0%",
+        gap: 2,
+        padding: 1.5,
+        borderRadius: 10,
+        bgcolor: isDark ? "rgba(255, 255, 255, 0.05)" : "rgba(0, 0, 0, 0.05)",
+        backdropFilter: "blur(10px)",
+        border: "1px solid",
+        borderColor: isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)",
+        zIndex: 1000,
       }}
     >
-      <BottomNavigation
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 5,
-        }}
-        value={value}
-        onChange={handleChange}
-      >
-        <BottomNavigationAction
-          value="home"
-          icon={
-            <Grow in={true} timeout={500} defaultValue={"home"}>
-              <HomeIcon fontSize="large" />
-            </Grow>
-          }
-        />
-        <BottomNavigationAction
-          value="about"
-          icon={
-            <Grow in={true} timeout={1000}>
-              <PersonIcon fontSize="large" />
-            </Grow>
-          }
-        />
-        <BottomNavigationAction
-          value="portfolio"
-          icon={
-            <Grow in={true} timeout={1500}>
-              <BusinessCenterIcon fontSize="large" />
-            </Grow>
-          }
-        />
-        <BottomNavigationAction
-          value="contact"
-          icon={
-            <Grow in={true} timeout={2000}>
-              <ContactPageIcon fontSize="large" />
-            </Grow>
-          }
-        />
-      </BottomNavigation>
+      {navItems.map((item, index) => {
+        const isActive = currentPage === item.id;
+        return (
+          <Tooltip key={item.id} title={item.label} placement="left" arrow>
+            <motion.div
+              initial={{ x: 20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <IconButton
+                onClick={() => handleChange(item.id)}
+                sx={{
+                  color: isActive
+                    ? theme.palette.primary.main
+                    : isDark
+                    ? "rgba(255, 255, 255, 0.5)"
+                    : "rgba(0, 0, 0, 0.5)",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    color: theme.palette.primary.main,
+                    bgcolor: isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.08)",
+                  },
+                  position: "relative",
+                }}
+              >
+                {item.icon}
+                {isActive && (
+                  <motion.div
+                    layoutId="activeSideNav"
+                    style={{
+                      position: "absolute",
+                      width: "100%",
+                      height: "100%",
+                      border: `2px solid ${theme.palette.primary.main}`,
+                      borderRadius: "50%",
+                    }}
+                  />
+                )}
+              </IconButton>
+            </motion.div>
+          </Tooltip>
+        );
+      })}
     </Box>
   );
 };

@@ -1,42 +1,49 @@
-export const logo = require("./logo.PNG");
-export const avatar = require("./avatar.jpeg");
-export const cryptoImages = (() => {
-  const imgs = [];
-  for (let i = 1; i <= 18; i++) {
-    const img = require(`./crypto/crypto${i}.jpeg`);
-    imgs.push(img);
-  }
-  return imgs;
-})();
-export const jobImages = (() => {
-  const jobs = [];
-  for (let i = 1; i <= 5; i++) {
-    const job = require(`./job/job${i}.jpeg`);
-    jobs.push(job);
-  }
-  return jobs;
-})();
-export const datingImages = (() => {
-  const dating = [];
-  for (let i = 1; i <= 16; i++) {
-    const date = require(`./dating/dating${i}.jpeg`);
-    dating.push(date);
-  }
-  return dating;
-})();
-export const foodjointImages = (() => {
-  const foodjoints = [];
-  for (let i = 1; i <= 3; i++) {
-    const foodjoint = require(`./foodjoint/foodjoint${i}.png`);
-    foodjoints.push(foodjoint);
-  }
-  return foodjoints;
-})();
-export const kudiexImages = (() => {
-  const kudiex = [];
-  for (let i = 1; i <= 1; i++) {
-    const kud = require(`./kudiex/kudiex${i}.png`);
-    kudiex.push(kud);
-  }
-  return kudiex;
-})();
+import logo from "./logo.PNG";
+import avatar from "./avatar.jpeg";
+
+export { logo, avatar };
+
+const cryptoModules = import.meta.glob("./crypto/crypto*.jpeg", { eager: true });
+export const cryptoImages = Object.keys(cryptoModules)
+  .sort((a, b) => {
+    const aNum = parseInt(a.match(/\d+/)![0]);
+    const bNum = parseInt(b.match(/\d+/)![0]);
+    return aNum - bNum;
+  })
+  .map((key) => (cryptoModules[key] as any).default);
+
+const jobModules = import.meta.glob("./job/job*.jpeg", { eager: true });
+export const jobImages = Object.keys(jobModules)
+  .sort((a, b) => {
+    const aNum = parseInt(a.match(/\d+/)![0]);
+    const bNum = parseInt(b.match(/\d+/)![0]);
+    return aNum - bNum;
+  })
+  .map((key) => (jobModules[key] as any).default);
+
+const datingModules = import.meta.glob("./dating/dating*.jpeg", { eager: true });
+export const datingImages = Object.keys(datingModules)
+  .sort((a, b) => {
+    const aNum = parseInt(a.match(/\d+/)![0]);
+    const bNum = parseInt(b.match(/\d+/)![0]);
+    return aNum - bNum;
+  })
+  .map((key) => (datingModules[key] as any).default);
+
+const foodjointModules = import.meta.glob("./foodjoint/foodjoint*.png", { eager: true });
+export const foodjointImages = Object.keys(foodjointModules)
+  .sort((a, b) => {
+    const aNum = parseInt(a.match(/\d+/)![0]);
+    const bNum = parseInt(b.match(/\d+/)![0]);
+    return aNum - bNum;
+  })
+  .map((key) => (foodjointModules[key] as any).default);
+
+const kudiexModules = import.meta.glob("./kudiex/kudiex*.png", { eager: true });
+export const kudiexImages = Object.keys(kudiexModules)
+  .sort((a, b) => {
+    const aNum = parseInt(a.match(/\d+/)![0]);
+    const bNum = parseInt(b.match(/\d+/)![0]);
+    return aNum - bNum;
+  })
+  .map((key) => (kudiexModules[key] as any).default);

@@ -7,6 +7,7 @@ import {
   Stack,
   Typography,
   styled,
+  useTheme,
 } from "@mui/material";
 import { useState } from "react";
 import Work from "../components/Work";
@@ -19,134 +20,160 @@ import {
 } from "../img";
 import Carousel from "react-material-ui-carousel";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion } from "framer-motion";
 
 const PortPage = () => {
   const [projectImages, setProjectImages] = useState<string[]>([]);
   const [modalTitle, setModalTitle] = useState<string>("");
   const [openModal, setOpenModal] = useState(false);
-  const handleOpenModal: (x: string[], title: string) => void = (
-    projectImgs: string[],
-    title: string
-  ) => {
+  const theme = useTheme();
+
+  const handleOpenModal = (projectImgs: string[], title: string) => {
     setOpenModal(true);
     setModalTitle(title);
     setProjectImages(projectImgs);
   };
+  
   const handleCloseModal = () => setOpenModal(false);
 
   return (
-    <>
-      <Stack
-        sx={{
-          flexDirection: "column",
-          gap: 5,
-          width: "100%",
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            gap: 1,
-          }}
-        >
+    <Box
+      component={motion.div}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      sx={{ width: "100%", py: 4 }}
+    >
+      <Stack spacing={6} alignItems="center">
+        <Box sx={{ textAlign: "center" }}>
           <Typography
-            color={"primary"}
+            variant="h2"
             sx={{
-              fontWeight: "bolder",
-              fontSize: {
-                md: 50,
-                xs: 30,
-              },
-              textTransform: "uppercase",
+              fontWeight: 800,
+              fontSize: { md: 56, xs: 36 },
+              fontFamily: "var(--font-primary)",
+              mb: 1,
             }}
           >
-            My
+            My <Box component="span" sx={{ color: "primary.main" }}>Portfolio</Box>
           </Typography>
           <Typography
-            sx={{
-              fontWeight: "bolder",
-              fontSize: {
-                md: 50,
-                xs: 30,
-              },
-              textTransform: "uppercase",
-            }}
+            variant="body1"
+            sx={{ color: "text.secondary", maxWidth: 600, mx: "auto" }}
           >
-            PORTFOLIO
+            A collection of projects I've worked on, ranging from web applications to mobile experiences.
           </Typography>
         </Box>
-        <Stack
+
+        <Box
           sx={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            rowGap: 5,
-            columnGap: {
-              xs: 5,
-              md: 5,
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
             },
-            mt: 5,
+            gap: 4,
             width: "100%",
-            flexWrap: "wrap",
           }}
         >
           <Work
+            name={"ElectHER Nigeria"}
+            description={"REACT • WEB APP"}
+            onClick={() => window.open("https://electher.netlify.app/", "_blank")}
+            headerImage={""} 
+            visitLink="https://electher.netlify.app/"
+          />
+          <Work
+            name={"Women In Action"}
+            description={"REACT • NGO WEBSITE"}
+            onClick={() => window.open("https://deft-dragon-d25161.netlify.app/", "_blank")}
+            headerImage={""}
+            visitLink="https://deft-dragon-d25161.netlify.app/"
+          />
+          <Work
             name={"Food Delivery App"}
-            description={"REACT, AWS"}
-            onClick={() =>
-              handleOpenModal(foodjointImages, "Food Delivery App")
-            }
+            description={"REACT • AWS"}
+            onClick={() => handleOpenModal(foodjointImages, "Food Delivery App")}
             headerImage={foodjointImages[0]}
+            visitLink="https://foodjointgh.com"
           />
           <Work
             name={"Money/Crypto Transfer App"}
-            description={"ANGULAR, AWS"}
-            onClick={() =>
-              handleOpenModal(kudiexImages, "Money/Crypto Transfer App")
-            }
+            description={"ANGULAR • AWS"}
+            onClick={() => handleOpenModal(kudiexImages, "Money/Crypto Transfer App")}
             headerImage={kudiexImages[0]}
+            repoLink="https://github.com/LawalRahman"
           />
           <Work
             name={"Crypto Exchange App"}
-            description={"REACT-NATIVE"}
+            description={"REACT NATIVE"}
             onClick={() => handleOpenModal(cryptoImages, "Crypto Exchange App")}
             headerImage={cryptoImages[0]}
+            repoLink="https://github.com/LawalRahman"
           />
           <Work
             name={"Job Search App"}
-            description={"REACT_NATIVE"}
+            description={"REACT NATIVE"}
             onClick={() => handleOpenModal(jobImages, "Job Search App")}
             headerImage={jobImages[0]}
+            repoLink="https://github.com/LawalRahman"
           />
           <Work
             name={"Dating App"}
             description={"REACT"}
             onClick={() => handleOpenModal(datingImages, "Dating App")}
             headerImage={datingImages[1]}
+            repoLink="https://github.com/LawalRahman"
           />
-        </Stack>
+          <Work
+            name={"Universal Admission System"}
+            description={"PHP • MYSQL"}
+            onClick={() => handleOpenModal([], "Universal Admission System")}
+            headerImage={""} 
+            visitLink="https://drive.google.com/drive/folders/1CSH8LpS6PQYljhUKgP-Nj77mDZcUP688?usp=sharing"
+          />
+          <Work
+            name={"XpressLogistics"}
+            description={"REACT • DJANGO"}
+            onClick={() => handleOpenModal([], "XpressLogistics")}
+            headerImage={""}
+            visitLink="https://xpresslogistics.herokuapp.com/"
+            repoLink="https://gitlab.com/rahmanlawal/xpress-logistics"
+          />
+          <Work
+            name={"UUID Generator API"}
+            description={"DJANGO REST API"}
+            onClick={() => handleOpenModal([], "UUID Generator API")}
+            headerImage={""}
+            visitLink="https://simpuuidapp.herokuapp.com/"
+            repoLink="https://gitlab.com/rahmanlawal/simple-uuidapi"
+          />
+        </Box>
       </Stack>
+
       <BasicModal
         open={openModal}
         handleCloseModal={handleCloseModal}
         displayImages={projectImages}
         title={modalTitle}
       />
-    </>
+    </Box>
   );
 };
 
 export default PortPage;
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  "& .MuiDialogContent-root": {
-    padding: theme.spacing(2),
-  },
-  "& .MuiDialogActions-root": {
+  "& .MuiDialog-paper": {
+    borderRadius: "24px",
     padding: theme.spacing(1),
+    maxWidth: "600px",
+    width: "100%",
+    backgroundColor: theme.palette.mode === "dark" ? "#1a1a1a" : "#fff",
+  },
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(3),
+    border: "none",
   },
 }));
 
@@ -167,47 +194,62 @@ function BasicModal({
     <BootstrapDialog
       open={open}
       onClose={handleCloseModal}
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      maxWidth="md"
     >
       <DialogTitle
-        sx={{ m: 0, p: 2, fontSize: { xs: 10, md: 15 }, fontWeight: "bold" }}
-        id="dialog-title"
-      >
-        {title}
-      </DialogTitle>
-      <IconButton
-        aria-label="close"
-        onClick={handleCloseModal}
-        sx={{
-          position: "absolute",
-          right: 8,
-          top: 8,
-          color: (theme) => theme.palette.grey[500],
+        sx={{ 
+          m: 0, 
+          p: 3, 
+          fontSize: "1.25rem", 
+          fontWeight: 700,
+          fontFamily: "var(--font-primary)"
         }}
       >
-        <CloseIcon />
-      </IconButton>
-      <DialogContent dividers>
-        <Box
+        {title}
+        <IconButton
+          aria-label="close"
+          onClick={handleCloseModal}
           sx={{
-            width: 350,
+            position: "absolute",
+            right: 16,
+            top: 16,
+            color: (theme) => theme.palette.grey[500],
           }}
         >
-          <Carousel animation="slide">
-            {displayImages.map((item: any, i: number) => (
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+      <DialogContent>
+        <Box sx={{ width: "100%", borderRadius: "16px", overflow: "hidden" }}>
+          <Carousel 
+            animation="slide"
+            navButtonsAlwaysVisible
+            indicators={displayImages.length > 1}
+            sx={{ minHeight: 300 }}
+          >
+            {displayImages.map((item, i) => (
               <Box
                 key={i}
                 sx={{
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  bgcolor: "#f8f9fa",
+                  borderRadius: "16px",
+                  p: 2,
+                  height: 400
                 }}
               >
-                <img alt={item} src={item} width={"80%"} height={"80%"} />
+                <img 
+                  alt={`${title} screenshot ${i}`} 
+                  src={item} 
+                  style={{ 
+                    maxWidth: "100%", 
+                    maxHeight: "100%", 
+                    objectFit: "contain",
+                    borderRadius: "8px"
+                  }} 
+                />
               </Box>
             ))}
           </Carousel>

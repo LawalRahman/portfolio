@@ -1,82 +1,84 @@
-import Box from "@mui/material/Box";
-import CircularProgress, {
-  CircularProgressProps,
-} from "@mui/material/CircularProgress";
-import Typography from "@mui/material/Typography";
+import { Box, Typography, useTheme } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+import { motion } from "framer-motion";
 
-export default function Skill(
-  props: CircularProgressProps & { value: number; label: string }
-) {
+export default function Skill({ value, label }: { value: number; label: string }) {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
+
   return (
     <Box
+      component={motion.div}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5 }}
       sx={{
         position: "relative",
-        display: "inline-flex",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 2,
         width: 120,
-        height: 120,
       }}
     >
-      <CircularProgress
-        thickness={4}
-        size={120}
-        variant="determinate"
-        {...props}
-        style={{
-          strokeLinecap: "round",
-        }}
-      />
-      <Box
-        sx={{
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          position: "absolute",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Typography
-          variant="caption"
-          component="div"
+      <Box sx={{ position: "relative", display: "inline-flex" }}>
+        <CircularProgress
+          variant="determinate"
+          value={100}
+          size={100}
+          thickness={2}
+          sx={{ color: isDark ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.05)" }}
+        />
+        <CircularProgress
+          variant="determinate"
+          value={value}
+          size={100}
+          thickness={4}
           sx={{
-            fontSize: 12,
-            fontWeight: "bold",
-            // transform: "scale(1)",
-            transition: "all 0.3s ease-in-out 0.2s",
-            ":hover": {
-              transform: "scale(1.2)",
-              transition: "all 0.3s ease-in-out 0.1s",
-            },
+            position: "absolute",
+            left: 0,
+            strokeLinecap: "round",
+            color: theme.palette.primary.main,
+          }}
+        />
+        <Box
+          sx={{
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            position: "absolute",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          {/* {`${Math.round(props.value)}%`} */}
-          {props.label}
-        </Typography>
+          <Typography
+            variant="caption"
+            sx={{
+              fontSize: 14,
+              fontWeight: 800,
+              fontFamily: "var(--font-primary)",
+              color: "text.primary",
+            }}
+          >
+            {value}%
+          </Typography>
+        </Box>
       </Box>
-      <Box
+      <Typography
         sx={{
-          left: 0,
-          bottom: -40,
-          right: 0,
-          position: "absolute",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          fontSize: 13,
+          fontWeight: 700,
+          textTransform: "uppercase",
+          letterSpacing: 1,
+          fontFamily: "var(--font-primary)",
+          color: "text.secondary",
         }}
       >
-        <Typography
-          variant="caption"
-          component="div"
-          sx={{
-            fontSize: 15,
-            fontWeight: "bold",
-          }}
-        >
-          {/* {props.label} */}
-        </Typography>
-      </Box>
+        {label}
+      </Typography>
     </Box>
   );
 }
